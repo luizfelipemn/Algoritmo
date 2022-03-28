@@ -1,0 +1,37 @@
+#demo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00ffdd;
+    border-radius: 5px;
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    width: 15%;
+    height: 40px;
+    font-weight: 500;
+}
+#demo3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00ffdd;
+    border-radius: 5px;
+    padding: 5px;
+    color: rgb(7, 7, 7);
+    width: 15%;
+    height: 40px;
+    font-weight: 500;
+}
+
+#demo4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00ffdd;
+    border-radius: 5px;
+    padding: 5px;
+    color: rgb(5, 5, 5);
+    width: 60%;
+    height: 50px;
+    font-weight: 500;
+}
