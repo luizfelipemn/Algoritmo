@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de infrações: <input id="input_qtd_infracao"><br>
+    Valor do carro: <input id="input_valor_carro"><br>
+
+    <button onclick="calcular_seguro()">Calcular seguro</button>
+
+    <div id="resultado"></div>
+
+
+
+
+</body>
+</html>
+
+<script>
+    function calcular_seguro(){
+        var valor_seguro = Number(input_valor_carro.value) * (1.5/100)
+        var qtd_infracao = Number(input_qtd_infracao.value)
+        
+        if (qtd_infracao <= 3) {
+             valor_seguro = valor_seguro * 0.9
+        }
+       resultado.innerHTML = `O valor do seguro é: R$${valor_seguro}`
+    }
+
+
+</script>
