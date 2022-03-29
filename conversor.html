@@ -7,34 +7,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="conversor.css">
 </head>
-<body>
-        <h1>Conversor de Bases</h1>
+<body class="body">
+        <h1 class="palavra">Conversor de Bases</h1>
 
         <br><br>
 
-        <h3>Decimal</h3>
-        <input id="demo1" type="text" placeholder="Digite o valor em decimal">
+        <h3 class="palavra">Decimal</h3>
+        <input id="demo1" type="number" placeholder="Digite o valor em decimal" max="99999999999999999999999999">
 
         <br><br>
 
-        <h3>converter para:</h3>
-        <input onclick="aparecer_octal()" type="checkbox"><b>Octal</b>
+        <h3 class="palavra">converter para:</h3>
+        <b>Octal</b>
         <br>
         <div id="demo2"></div>
 
         <br><br>
-        <input onclick="aparecer_hexa()" type="checkbox"><b>Hexadecimal</b>
+        <b>Hexadecimal</b>
         <br>
         <div id="demo3"></div>
         <br><br>
 
-        <input onclick="aparecer_bin()" type="checkbox"><b>Binário</b>
+        <b>Binário</b>
         <br>
         <div id="demo4"></div>
 
         <br><br>
 
         <button onclick="converter()">Converter</button>
+    
 
 
     
@@ -66,11 +67,10 @@
 
             }
 
-          
-            document.bgColor = "#0F33f6";
-        
-        
-
-
-
 </script>
+
+
+
+
+
+
