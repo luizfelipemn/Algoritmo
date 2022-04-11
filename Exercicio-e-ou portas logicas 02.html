@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select id="select_convidado_a">
+        <option value="0">Carnes e derivados de animais</option>
+        <option value="1">Apenas opções veganas</option>
+    </select><br>
+
+    <select id="select_convidado_b">
+        <option value="0">Carnes e derivados de animais</option>
+        <option value="1">Apenas opções veganas</option>
+    </select><br>
+
+    <button onclick="verificar()">Verificar</button>
+
+    <div id="resultado"></div>
+    porta logica nxor
+    
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var convidado_a = select_convidado_a.value
+        var convidado_b = select_convidado_b.value
+
+        if(convidado_a == "1" && convidado_b == "1"){
+            resultado.innerHTML = `Ótimo ! Taxa de sucesso de 100%`
+
+        }
+        else if(convidado_a == "0" && convidado_b == "0"){
+            resultado.innerHTML = `Tá tudo liberado ! Taxa de sucesso de 100%` 
+            
+        }
+        else {
+            resultado.innerHTML = `Probabilidade de fracasso de 100%`
+        }
+    }
+
+
+
+</script>
