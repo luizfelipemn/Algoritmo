@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Frase: <input onkeyup="verificar_frase()"; id="input_frase">
+    <br>
+    Tamanho do texto: <span id="span_tamanho_texto">0</span>
+    <br>
+    Primeira letra: <span id="span_primeira_letra"></span>
+    <br>
+
+    Última letra: <span id="span_ultima_letra"></span>
+    <br>
+
+    Email valido: <span id="span_tem_arroba">Não</span>
+    <br>
+
+    Começa com a ? <span id="span_comeca_correto">Não</span>
+    <br>
+
+    Termina com .com.br ? <span id="span_termina_correto">Não</span>
+    <br>
+
+    Frase, em minúsculo: <span id="span_minusculo"></span>
+    <br>
+
+    Frase, em maiusculo: <span id="span_maiusculo"></span>
+    <br>
+
+    Trocar o 1º a por @: <span id="span__trocar_primeiro_a"></span>
+    <br>
+    Trocar todos a por @: <span id="span__trocar_todos_a"></span>
+
+
+
+
+</body>
+</html>
+
+
+<script>
+    function verificar_frase() {
+        var frase = input_frase.value
+        span_tamanho_texto.innerHTML = frase.length
+        span_primeira_letra.innerHTML = frase[0]
+        span_ultima_letra.innerHTML = frase[frase.length - 1]
+        if(frase.indexOf("@") > -1){
+            span_tem_arroba.innerHTML = "Sim"
+        }
+        else {
+            span_tem_arroba.innerHTML = "Não"
+        }
+         
+        var termina_certo = frase.endsWith(".com.br")
+        if (termina_certo){
+            span_termina_correto.innerHTML = "sim"
+
+        }
+        else { span_termina_correto.innerHTML = "Não"
+
+        }
+        span_minusculo.innerHTML = frase.toLowerCase()
+
+        span_maiusculo.innerHTML = frase.toUpperCase()
+
+        span__trocar_primeiro_a.innerHTML = frase.replace("a", "@")
+
+        span__trocar_todos_a.innerHTML = frase.replaceAll("a", "4")
+    }
+
+
+
+
+</script>
