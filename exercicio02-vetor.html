@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Lugar para onde ja viajou: <input id="input_lugar"><br>
+   numero da viagem: <input id="input_numero_viagem"><br>
+   <button onclick="cadastrar()">Cadastrar local</button><br>
+   <button onclick="relembrar()">Relembrar viagem</button>
+   <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    var lista_de_lugares = []
+    var posicao_viagem = 0
+  
+    function cadastrar(){
+        var lugar = input_lugar.value
+        var tamanho_lista = lista_de_lugares.length
+        lista_de_lugares.push(lugar)
+        posicao_viagem++
+       
+    }
+    function relembrar(){
+        var numero_da_viagem = Number(input_numero_viagem.value)
+        if(numero_da_viagem > lista_de_lugares.length){
+            resultado.innerHTML = `Você não fez uma ${numero_da_viagem}ª viagem!`
+        }
+        else{
+            resultado.innerHTML = `${lista_de_lugares[numero_da_viagem - 1]}`
+
+        }
+
+    }
+
+
+
+
+</script>
