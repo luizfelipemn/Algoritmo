@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do aluno:<input id="input_aluno"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="div_aluno"></div>
+</body>
+</html>
+
+<script>
+    var lista_aluno = []
+    function cadastrar(){
+        var aluno = input_aluno.value
+        var aluno_existe = 0
+
+
+        div_aluno.innerHTML = ""
+        for(
+            posicao = 0;
+            posicao < lista_aluno.length;
+            posicao++
+        ){
+            if(aluno == lista_aluno[posicao]){
+                aluno_existe = 1
+            }
+        }
+
+        if(aluno_existe == 1){
+            alert("Aluno já existe")
+        } 
+        else{
+            lista_aluno.push(aluno)
+                
+
+        }
+
+        for(
+            posicao = 0;
+            posicao < lista_aluno.length;
+            posicao++
+        ){
+            div_aluno.innerHTML += `${lista_aluno[posicao]}<br>`
+        }
+    }
+</script>
