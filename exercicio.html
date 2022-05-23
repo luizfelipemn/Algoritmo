@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do pais: <input id="input_nome_pais"><br>
+    População: <input id="input_populacao"><br>
+    Grau de liberdade econômica: <input id="input_liberdade_eco"><br>
+    <button onclick="cadastrar_pais()">Cadastrar País</button><br>
+    <button onclick="analisar()">Analisar</button><br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+    var lista_de_paises = []
+    var lista_categoria = []
+    var lista_habitantes = []
+    var lista_idh = []
+    var lista_desemprego = []
+    function cadastrar_pais(){
+        var pais = input_nome_pais.value
+        var populacao = Number(input_populacao.value)
+        var grau_liberdade_eco = Number(input_liberdade_eco.value)
+
+        var pais_cadastrado = false
+        for (var contador = 0;
+        contador < lista_de_paises.length;
+        contador++){
+            if(lista_de_paises[contador] == pais){
+                pais_cadastrado = true
+            }
+        }
+        
+        if(grau_liberdade_eco < 0 || grau_liberdade_eco > 100 || populacao < 1000){
+            alert("Valores inválidos")
+        }
+        else if(pais_cadastrado == true){
+            alert("Pais já cadastrado")
+        }
+        else{
+        var categoria = ""
+        var idh = ""
+        var desemprego_medio = 0
+
+        if(grau_liberdade_eco > 80){
+            categoria = "Livre"
+            idh = "0.85"
+            desemprego_medio = 0.05
+
+        } 
+        else if(grau_liberdade_eco > 70){
+            categoria = "Quase Livre"
+            idh = "0.77"
+            desemprego_medio = 0.07
+        }
+        else if(grau_liberdade_eco > 60){
+            categoria = "Moderadamente Livre"
+            idh = "0.74"
+            desemprego_medio = 0.08
+        }
+        else if(grau_liberdade_eco > 50){
+            categoria = "Quase Reprimido"
+            idh = "0.65"
+            desemprego_medio = 0.15
+        }
+        else{
+            categoria = "Reprimido"
+            idh = "0.60"
+            desemprego_medio = 0.22
+        }
+        var desempregados = populacao * desemprego_medio
+
+        var texto_desemprego = `${(desemprego_medio * 100).toFixed(0)}% ou seja, talvez ${desempregados.toFixed(0)} 
+        estejam sem emprego`
+
+
+        lista_de_paises.push(pais)
+        lista_categoria.push(categoria)
+        lista_habitantes.push(populacao)
+        lista_idh.push(idh)
+        lista_desemprego.push(texto_desemprego)
+    }
+
+
+}
+
+    function analisar(){
+        div_resultado.innerHTML = ""
+        for(var contador = 0; 
+        contador < lista_de_paises.length ; 
+        contador++){
+            div_resultado.innerHTML += `
+            Páis ${contador + 1}: ${lista_de_paises[contador]}<br>
+            Categoria: ${lista_categoria[contador]}<br>
+            Habitantes:${lista_habitantes[contador]}<br>
+            IDH médio provável: ${lista_idh[contador]}<br>
+            Desemprego médio provável: ${lista_desemprego[contador]}<br><br>`
+        }
+
+
+    }
+</script>

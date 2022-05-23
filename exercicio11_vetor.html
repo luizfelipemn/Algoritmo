@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Dia do depósito: <input id="input_dia"><br>
+    Quantidade depositada: <input id="input_qtd_deposito"><br>
+    <button onclick="guardar()">Guardar</button><br>
+
+    Intervalo de dias inicial: <input id="input_intervalo_inicial"><br>
+    Intervalo de dias final: <input id="input_intervalo_final"><br>
+    <button onclick="rever()">Rever Depósitos</button>
+    <div id="resultado"></div>
+    <span style="color: red;"></span>
+</body>
+</html>
+
+<script>
+    lista_de_dias = []
+    lista_de_depositos = []
+    function guardar(){
+    var dia = input_dia.value
+    var qtd_deposito = Number(input_qtd_deposito.value)
+    
+    lista_de_dias.push(dia)
+    lista_de_depositos.push(qtd_deposito)
+    }
+
+    function rever(){
+        var intervalo_inicial = input_intervalo_inicial.value
+        var intervalo_final = input_intervalo_final.value
+
+        resultado.innerHTML = ""
+        for(var contador = 0;
+        contador < lista_de_depositos.length ;
+        contador++){
+
+            if (lista_de_dias[contador] >= intervalo_inicial && lista_de_dias[contador] <= intervalo_final){
+            if( contar%2==0)
+            {resultado.innerHTML += `<span style="color: blue;"> dia = ${lista_de_dias[contador]}   
+            Valor depositado = R$ ${lista_de_depositos[contador]}</span><br>` }
+            
+            }
+        }
+    }
+
+</script>
